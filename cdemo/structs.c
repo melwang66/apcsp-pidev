@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Student {
+struct Student
+{
 	char firstnm[50];
 	char lastnm[50];
 	int age;
-	int atudentid;
-	};
+	int studentid;
+};
 
 void printStudent(struct Student* student)
 {
@@ -28,7 +29,7 @@ int main()
 	int studentnum = 0;
 		while (yn == 1)
 		{
-			for (int i = studentnum + 1; i++)
+			for (int i = studentnum; i < studentnum + 1; i++)
 			{
 				printf("Student first name:\n");
 				fgets(input, 256, stdin);
@@ -59,9 +60,9 @@ int main()
 		fgets(input, 256, stdin);
 		sscanf(input, "%d", &yn);
 	}
-	printf("Okay, here's the student list...\n");
+	printf("Here's the student list...\n");
 	for (int i = 0; i < studentnum; i++)
 	{
-		printStudent(%mystudent[i]);
+		printStudent(&mystudent[i]);
 	}
 }
